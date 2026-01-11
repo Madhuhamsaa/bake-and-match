@@ -1,0 +1,30 @@
+{
+    "home": {
+        "title": "Food & Match",
+        "tagline": "Think. Cook. Match.",
+        "start": "Start"
+    },
+    "navigation": {
+        "home": "Home",
+        "notifications": "Notifications",
+        "profile": "Your Profile",
+        "settings": "Settings",
+        "exit": "Exit"
+    },
+    "settings": {
+        "title": "Settings",
+        "audio": "Sound",
+        "music": "Music",
+        "volume": "Volume",
+        "preferences": "Preferences",
+        "language": "Language",
+        "fontSize": "Font Size",
+        "information": "Information",
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy",
+        "faq": "Questions & Answers",
+        "account": "Account",
+        "deleteAccount": "Delete Account",
+        "version": "Version"
+    }
+}

@@ -1,15 +1,21 @@
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
 import {
     Pressable,
     SafeAreaView,
     StyleSheet,
     Text,
-    View,
+    View
 } from "react-native";
 import Svg, { Path, Text as SvgText, TextPath } from "react-native-svg";
 
 export default function HomeScreen() {
+    const router = useRouter();
+
+    // TEMP font size (later this will come from Settings / context)
+    const fontSize = 16;
+
     return (
         <LinearGradient
             colors={["#c0ecffff", "#43ec51ff", "#f2a100ff"]}
@@ -43,10 +49,16 @@ export default function HomeScreen() {
                         <Text style={styles.pot}>🍲</Text>
                     </View>
 
-                    <Text style={styles.tagline}>Think. Cook. Match.</Text>
+                    {/* TAGLINE */}
+                    <Text style={[styles.tagline, { fontSize }]}>
+                        Think. Cook. Match.
+                    </Text>
 
+                    {/* START BUTTON */}
                     <Pressable style={styles.startButton}>
-                        <Text style={styles.startText}>START</Text>
+                        <Text style={[styles.startText, { fontSize: fontSize + 2 }]}>
+                            START
+                        </Text>
                     </Pressable>
                 </View>
 
@@ -57,19 +69,31 @@ export default function HomeScreen() {
                     </Pressable>
 
                     <Pressable style={styles.bottomBox}>
-                        <Ionicons name="notifications-outline" size={30} color="#000000ff" />
+                        <Ionicons
+                            name="notifications-outline"
+                            size={30}
+                            color="#000000ff"
+                        />
                     </Pressable>
 
                     <Pressable style={styles.bottomBox}>
                         <Ionicons name="person-outline" size={30} color="#000000ff" />
                     </Pressable>
 
-                    <Pressable style={styles.bottomBox}>
+                    {/* SETTINGS – CONNECTED */}
+                    <Pressable
+                        style={styles.bottomBox}
+                        onPress={() => router.push("/settings")}
+                    >
                         <Ionicons name="settings-outline" size={30} color="#000000ff" />
                     </Pressable>
 
                     <Pressable style={styles.bottomBox}>
-                        <Ionicons name="close-circle-outline" size={30} color="#000000ff" />
+                        <Ionicons
+                            name="close-circle-outline"
+                            size={30}
+                            color="#000000ff"
+                        />
                     </Pressable>
                 </View>
 
@@ -83,31 +107,29 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        justifyContent: "space-between",
+        justifyContent: "space-between"
     },
 
     /* CENTER */
     center: {
         alignItems: "center",
-        marginTop: 100,
+        marginTop: 100
     },
 
     potBox: {
         backgroundColor: "rgba(255,255,255,0.25)",
-        padding: 40,
         borderRadius: 100,
         marginTop: -20,
         marginBottom: 40,
-        padding: 50,
+        padding: 50
     },
     pot: {
-        fontSize: 110,
+        fontSize: 110
     },
     tagline: {
         color: "#ffffffff",
         marginBottom: 40,
-        letterSpacing: 0.5,
-        fontSize: 20,
+        letterSpacing: 0.5
     },
 
     startButton: {
@@ -115,20 +137,19 @@ const styles = StyleSheet.create({
         paddingVertical: 16,
         paddingHorizontal: 70,
         borderRadius: 40,
-        elevation: 6,
+        elevation: 6
     },
     startText: {
-        fontSize: 18,
         fontWeight: "700",
-        color: "#3A1A0A",
+        color: "#3A1A0A"
     },
 
-    /* BOTTOM BAR – SAME LINE, 3 BOXES */
+    /* BOTTOM BAR */
     bottomBar: {
         flexDirection: "row",
         justifyContent: "space-between",
         paddingHorizontal: 30,
-        paddingBottom: 20,
+        paddingBottom: 20
     },
     bottomBox: {
         flex: 1,
@@ -136,10 +157,6 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(0,0,0,0.25)",
         paddingVertical: 14,
         borderRadius: 16,
-        alignItems: "center",
-    },
-    bottomIcon: {
-        fontSize: 28,
-        color: "#FFF",
-    },
+        alignItems: "center"
+    }
 });

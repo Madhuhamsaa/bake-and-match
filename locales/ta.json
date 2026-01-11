@@ -1,0 +1,30 @@
+{
+    "home": {
+        "title": "Food & Match",
+        "tagline": "யோசி. சமை. பொருத்து.",
+        "start": "தொடங்கு"
+    },
+    "navigation": {
+        "home": "முகப்பு",
+        "notifications": "நோட்டிஃபிகேஷன்",
+        "profile": "உங்கள் முகவரி",
+        "settings": "செட்டிங்ஸ்",
+        "exit": "வெளியேறு"
+    },
+    "settings": {
+        "title": "செட்டிங்ஸ்",
+        "audio": "சவுண்ட்",
+        "music": "மியூசிக்",
+        "volume": "சவுண்ட் அளவு",
+        "preferences": "விருப்பங்கள்",
+        "language": "மொழி",
+        "fontSize": "எழுத்து அளவு",
+        "information": "தகவல்கள்",
+        "terms": "விதிமுறைகள்",
+        "privacy": "தனியுரிமை",
+        "faq": "கேள்வி & பதில்கள்",
+        "account": "அக்கவுண்ட்",
+        "deleteAccount": "அக்கவுண்ட் நீக்கு",
+        "version": "வெர்ஷன்"
+    }
+}
