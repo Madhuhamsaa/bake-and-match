@@ -30,16 +30,35 @@ export default function SettingsScreen() {
 
     const handleReset = () => {
         Alert.alert(
-            t("settings.resetTitle"),
-            t("settings.resetMessage"),
+            t("settings.resetConfirmTitle"),
+            t("settings.resetConfirmMessage"),
             [
-                { text: t("common.cancel"), style: "cancel" },
                 {
-                    text: t("common.confirm"),
+                    text: t("common.cancel"),
+                    style: "cancel"
+                },
+                {
+                    text: t("settings.resetConfirmYes"),
                     style: "destructive",
                     onPress: async () => {
-                        await AsyncStorage.clear();
-                        Alert.alert(t("settings.resetDone"));
+                        try {
+                            // Remove only GAME data
+                            await AsyncStorage.multiRemove([
+                                "levelsCompleted",
+                                "levelsUnlocked",
+                                "achievements",
+                                "notifications"
+                            ]);
+
+                            // Re-initialize game progress
+                            await AsyncStorage.setItem("levelsCompleted", "0");
+                            await AsyncStorage.setItem("levelsUnlocked", "1");
+
+                            Alert.alert(t("settings.resetDone"));
+                            router.replace("/"); // go back to front page
+                        } catch (e) {
+                            console.log("Reset error", e);
+                        }
                     }
                 }
             ]

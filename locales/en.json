@@ -27,8 +27,11 @@
         "resetData": "Reset Game Data",
         "resetTitle": "Reset Game Data",
         "resetMessage": "This will erase all local progress and settings on this device.",
-        "resetDone": "Game data has been reset.",
         "version": "VERSION",
+        "resetConfirmTitle": "Reset Game Progress",
+        "resetConfirmMessage": "This will delete your game progress and restart from level 1. Do you want to continue?",
+        "resetConfirmYes": "Yes, reset game",
+        "resetDone": "Game progress has been reset.",
         "soundEffects": "SOUND EFFECTS"
     },
     "terms": {

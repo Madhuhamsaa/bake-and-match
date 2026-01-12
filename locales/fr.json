@@ -27,8 +27,11 @@
         "resetData": "Réinitialiser les données",
         "resetTitle": "Réinitialiser les données",
         "resetMessage": "Toutes les données locales seront supprimées de cet appareil.",
-        "resetDone": "Les données du jeu ont été réinitialisées.",
         "version": "VERSION",
+        "resetConfirmTitle": "Réinitialiser la progression",
+        "resetConfirmMessage": "Cela supprimera votre progression et redémarrera au niveau 1. Voulez-vous continuer ?",
+        "resetConfirmYes": "Oui, réinitialiser",
+        "resetDone": "La progression du jeu a été réinitialisée.",
         "soundEffects": "EFFETS SONORES"
     },
     "terms": {
