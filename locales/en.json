@@ -75,5 +75,40 @@
         "nameUpdatedTitle": "Profile Updated",
         "nameUpdatedMessage": "Your profile name has been changed.",
         "aboutDescription": "Bake and Match is a memory and logic-based puzzle game designed to challenge focus, pattern recognition, and problem-solving skills."
+    },
+    "notifications": {
+        "title": "Notifications",
+        "levelUnlockedTitle": "Level 2 Unlocked",
+        "levelUnlockedMessage": "You can now play Level 2. New food cards are waiting!",
+        "newFoodTitle": "New Food Added",
+        "newFoodMessage": "Bakery items have been added to the memory game.",
+        "gameUpdateTitle": "Game Update",
+        "gameUpdateMessage": "Minor improvements for smoother gameplay.",
+        "dailyChallengeTitle": "Daily Challenge",
+        "dailyChallengeMessage": "Complete today’s challenge to earn bonus points.",
+        "timeNow": "Just now",
+        "timeToday": "Today",
+        "timeYesterday": "Yesterday",
+        "timeTwoDays": "2 days ago",
+        "noNotifications": "No notifications yet"
+    },
+    "exit": {
+        "title": "Exit App",
+        "message": "Do you want to close the app?",
+        "yes": "Yes",
+        "no": "No"
+    },
+    "homeMain": {
+        "title": "Home",
+        "welcomeTitle": "Welcome to Bake & Match",
+        "welcomeText": "This is not a rush game. No hearts, no pressure, no countdown screaming at you. Just you, food, and a little curiosity. Take your time — cooking is not a race.",
+        "gameIdeaTitle": "What is Bake & Match?",
+        "gameIdeaText": "Bake & Match is a food-fusion memory game. Today it’s ingredients, tomorrow it could be street food, cultural dishes, or full recipes with real steps. This kitchen grows with you.",
+        "howToPlayTitle": "How the Game Works",
+        "level1": "Personal Level: Start simple. Match ingredients, understand combinations, and get comfortable with the basics.",
+        "level2": "Baking Level: Things get warmer here. Follow longer steps, remember sequences, and build dishes layer by layer.",
+        "level3": "Memory Level: No recipes in front of you. Just memory, logic, and instinct — like real cooking.",
+        "tipsTitle": "Good to Know",
+        "tipsText": "There are no lives to lose and no hints to buy. If you’re stuck, think, retry, or even Google it — real cooks do. This is a mobile game made to relax your brain, not break your heart."
     }
 }

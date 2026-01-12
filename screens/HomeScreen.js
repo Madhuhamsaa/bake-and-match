@@ -1,13 +1,53 @@
 import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect, useRouter } from "expo-router";
+import { useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Alert, BackHandler, Pressable, StyleSheet, Text, View } from "react-native";
 import Svg, { Path, Text as SvgText, TextPath } from "react-native-svg";
 
 export default function HomeScreen() {
     const router = useRouter();
+    const APP_VERSION = "1.0.0"; // change to 1.0.1 later
 
     // TEMP font size (later this will come from Settings / context)
     const fontSize = 16;
+
+    const { t } = useTranslation();
+
+    const handleExitApp = () => {
+        Alert.alert(
+            t("exit.title"),
+            t("exit.message"),
+            [
+                {
+                    text: t("exit.no"),
+                    style: "cancel"
+                },
+                {
+                    text: t("exit.yes"),
+                    style: "destructive",
+                    onPress: () => BackHandler.exitApp()
+                }
+            ]
+        );
+    };
+
+    const [unreadCount, setUnreadCount] = useState(0);
+
+    useFocusEffect(
+        useCallback(() => {
+            const loadUnreadCount = async () => {
+                const stored = await AsyncStorage.getItem("notifications");
+                const notifications = stored ? JSON.parse(stored) : [];
+
+                const unread = notifications.filter(n => !n.read).length;
+                setUnreadCount(unread);
+            };
+
+            loadUnreadCount();
+        }, [])
+    );
 
     return (
 
@@ -54,16 +94,24 @@ export default function HomeScreen() {
 
             {/* BOTTOM BAR – ICON BUTTONS */}
             <View style={styles.bottomBar}>
-                <Pressable style={styles.bottomBox}>
-                    <Ionicons name="home-outline" size={30} color="#000000ff" />
+                <Pressable
+                    style={styles.bottomBox}
+                    onPress={() => router.push("/home-main")}
+                >
+                    <Ionicons name="home-outline" size={30} />
                 </Pressable>
 
-                <Pressable style={styles.bottomBox}>
-                    <Ionicons
-                        name="notifications-outline"
-                        size={30}
-                        color="#000000ff"
-                    />
+                <Pressable
+                    style={styles.bottomBox}
+                    onPress={() => router.push("/notifications")}
+                >
+                    <Ionicons name="notifications-outline" size={30} />
+
+                    {unreadCount > 0 && (
+                        <View style={styles.badge}>
+                            <Text style={styles.badgeText}>{unreadCount}</Text>
+                        </View>
+                    )}
                 </Pressable>
 
                 <Pressable
@@ -81,13 +129,17 @@ export default function HomeScreen() {
                     <Ionicons name="settings-outline" size={30} color="#000000ff" />
                 </Pressable>
 
-                <Pressable style={styles.bottomBox}>
+                <Pressable
+                    style={styles.bottomBox}
+                    onPress={handleExitApp}
+                >
                     <Ionicons
                         name="close-circle-outline"
                         size={30}
                         color="#000000ff"
                     />
                 </Pressable>
+
             </View>
 
         </View>
@@ -97,6 +149,22 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
 
     container: { flex: 1, justifyContent: "space-between" },
+    badge: {
+        position: "absolute",
+        top: 6,
+        right: 14,
+        backgroundColor: "red",
+        borderRadius: 10,
+        minWidth: 18,
+        height: 18,
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    badgeText: {
+        color: "#fff",
+        fontSize: 11,
+        fontWeight: "700"
+    },
 
     /* CENTER */
     center: { alignItems: "center", marginTop: 100 },

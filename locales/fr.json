@@ -75,5 +75,40 @@
         "nameUpdatedTitle": "Profil mis à jour",
         "nameUpdatedMessage": "Votre nom de profil a été modifié.",
         "aboutDescription": "Bake and Match est un jeu de mémoire et de logique conçu pour stimuler la concentration, la reconnaissance de motifs et la réflexion."
+    },
+    "notifications": {
+        "title": "Notifications",
+        "levelUnlockedTitle": "Niveau 2 débloqué",
+        "levelUnlockedMessage": "Vous pouvez maintenant jouer au niveau 2. De nouveaux aliments vous attendent !",
+        "newFoodTitle": "Nouveaux aliments ajoutés",
+        "newFoodMessage": "Des éléments de boulangerie ont été ajoutés au jeu de mémoire.",
+        "gameUpdateTitle": "Mise à jour du jeu",
+        "gameUpdateMessage": "Améliorations mineures pour une expérience plus fluide.",
+        "dailyChallengeTitle": "Défi quotidien",
+        "dailyChallengeMessage": "Terminez le défi du jour pour gagner des points bonus.",
+        "timeNow": "À l’instant",
+        "timeToday": "Aujourd’hui",
+        "timeYesterday": "Hier",
+        "noNotifications": "Aucune notification pour le moment",
+        "timeTwoDays": "Il y a 2 jours"
+    },
+    "exit": {
+        "title": "Quitter l'application",
+        "message": "Voulez-vous fermer l'application ?",
+        "yes": "Oui",
+        "no": "Non"
+    },
+    "homeMain": {
+        "title": "Accueil",
+        "welcomeTitle": "Bienvenue dans Bake & Match",
+        "welcomeText": "Ici, pas de course contre la montre. Pas de vies à perdre, pas de stress. Juste vous, la nourriture et un peu de curiosité. La cuisine prend son temps.",
+        "gameIdeaTitle": "Qu’est-ce que Bake & Match ?",
+        "gameIdeaText": "Bake & Match est un jeu de mémoire culinaire. Aujourd’hui des ingrédients, demain des plats culturels ou de vraies recettes avec étapes. Cette cuisine évolue avec vous.",
+        "howToPlayTitle": "Comment jouer",
+        "level1": "Niveau Personnel : Commencez doucement. Associez les ingrédients et comprenez les bases.",
+        "level2": "Niveau Pâtisserie : Les étapes s’allongent. Mémorisez, assemblez et construisez vos plats.",
+        "level3": "Niveau Mémoire : Plus de recettes visibles. Seulement votre mémoire et votre logique.",
+        "tipsTitle": "À savoir",
+        "tipsText": "Aucune vie à perdre, aucun indice à acheter. Réessayez, réfléchissez, ou cherchez ailleurs — comme en vraie cuisine. Un jeu mobile fait pour apaiser l’esprit."
     }
 }
