@@ -154,5 +154,25 @@
             "Flour",
             "Flour"
         ]
+    },
+    "baking": {
+        "step1Title": "STEP-1",
+        "step1Instruction": "Pick the base ingredients wisely 👀",
+        "successEasy": "Sweet start 😏 You’ve got the basics right!",
+        "fail": "Oops 😬 That doesn’t belong here!",
+        "continue": "Let’s cook 🔥",
+        "tryAgain": "Start over",
+        "pickCount": "Pick {{count}} correct ingredients to move on 😏"
+    },
+    "ingredients": {
+        "milk": "Milk",
+        "sugar": "Sugar",
+        "flour": "Flour",
+        "water": "Water",
+        "slime": "Slime",
+        "salt": "Salt",
+        "yeast": "Yeast",
+        "yogurt": "Yogurt",
+        "juice": "Juice"
     }
 }
