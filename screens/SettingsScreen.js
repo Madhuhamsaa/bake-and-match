@@ -1,17 +1,51 @@
 import { Ionicons } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
+import { Alert, Pressable, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import i18n from "../i18n";
 
 export default function SettingsScreen() {
     const router = useRouter();
     const { t } = useTranslation();
 
+    const [currentLang, setCurrentLang] = useState(i18n.language);
+
     const [music, setMusic] = useState(true);
     const [sound, setSound] = useState(true);
     const [fontSize, setFontSize] = useState(14);
+
+    useEffect(() => {
+        const onLanguageChange = (lng) => {
+            setCurrentLang(lng);
+        };
+
+        i18n.on("languageChanged", onLanguageChange);
+
+        return () => {
+            i18n.off("languageChanged", onLanguageChange);
+        };
+    }, []);
+
+    const handleReset = () => {
+        Alert.alert(
+            t("settings.resetTitle"),
+            t("settings.resetMessage"),
+            [
+                { text: t("common.cancel"), style: "cancel" },
+                {
+                    text: t("common.confirm"),
+                    style: "destructive",
+                    onPress: async () => {
+                        await AsyncStorage.clear();
+                        Alert.alert(t("settings.resetDone"));
+                    }
+                }
+            ]
+        );
+    };
+
 
     return (
         <View style={styles.container}>
@@ -55,21 +89,66 @@ export default function SettingsScreen() {
                     style={styles.row}
                     onPress={() => i18n.changeLanguage("en")}
                 >
-                    <Text style={[styles.label, { fontSize }]}>English</Text>
+                    <Text
+                        style={[
+                            styles.label,
+                            styles.clickableText,
+                            { fontSize },
+                            currentLang === "en" && styles.activeText
+                        ]}
+                    >
+                        English
+                    </Text>
+
+                    <Ionicons
+                        name={currentLang === "en" ? "checkmark" : "chevron-forward-outline"}
+                        size={20}
+                        color={currentLang === "en" ? "#000" : "#999"}
+                    />
                 </Pressable>
 
                 <Pressable
-                    style={[styles.row, styles.languageRow]}
+                    style={styles.row}
                     onPress={() => i18n.changeLanguage("fr")}
                 >
-                    <Text style={[styles.label, { fontSize }]}>Français</Text>
+                    <Text
+                        style={[
+                            styles.label,
+                            styles.clickableText,
+                            { fontSize },
+                            currentLang === "fr" && styles.activeText
+                        ]}
+                    >
+                        Français
+                    </Text>
+
+                    <Ionicons
+                        name={currentLang === "fr" ? "checkmark" : "chevron-forward-outline"}
+                        size={20}
+                        color={currentLang === "fr" ? "#000" : "#999"}
+                    />
                 </Pressable>
 
                 <Pressable
-                    style={[styles.row, styles.languageRow]}
+                    style={styles.row}
                     onPress={() => i18n.changeLanguage("ta")}
                 >
-                    <Text style={[styles.label, { fontSize }]}>தமிழ்</Text>
+                    <Text
+                        style={[
+                            styles.label,
+                            styles.clickableText,
+                            { fontSize },
+                            currentLang === "ta" && styles.activeText
+                        ]}
+                    >
+                        தமிழ்
+                    </Text>
+
+                    <Ionicons
+                        name={currentLang === "ta" ? "checkmark" : "chevron-forward-outline"}
+                        size={20}
+                        color={currentLang === "ta" ? "#000" : "#999"}
+                    />
                 </Pressable>
 
                 {/* FONT SIZE */}
@@ -96,26 +175,31 @@ export default function SettingsScreen() {
                     {t("settings.information")}
                 </Text>
 
-                <Pressable style={styles.row}>
-                    <Text style={[styles.label, { fontSize }]}>
+                <Pressable style={styles.row} onPress={() => router.push("/terms")}>
+                    <Text style={[styles.label, styles.clickableText, { fontSize }]}>
                         {t("settings.terms")}
                     </Text>
+                    <Ionicons name="chevron-forward-outline" size={20} color="#ffffffff" />
                 </Pressable>
 
-                <Pressable style={styles.row}>
-                    <Text style={[styles.label, { fontSize }]}>
+                <Pressable style={styles.row} onPress={() => router.push("/privacy")}>
+                    <Text style={[styles.label, styles.clickableText, { fontSize }]}>
                         {t("settings.privacy")}
                     </Text>
+                    <Ionicons name="chevron-forward-outline" size={20} color="#ffffffff" />
                 </Pressable>
 
-                {/* ACCOUNT */}
+                {/* DATA */}
                 <Text style={[styles.section, { fontSize }]}>
-                    {t("settings.account")}
+                    {t("settings.data")}
                 </Text>
 
-                <Pressable style={[styles.row, styles.danger]}>
+                <Pressable
+                    style={[styles.row, styles.danger]}
+                    onPress={handleReset}
+                >
                     <Text style={[styles.label, { fontSize, color: "red" }]}>
-                        {t("settings.deleteAccount")}
+                        {t("settings.resetData")}
                     </Text>
                 </Pressable>
             </ScrollView>
@@ -139,6 +223,12 @@ const styles = StyleSheet.create({
         fontWeight: "800",
         textAlign: "center",
         marginTop: 12
+    },
+    clickableText: {
+        color: "#222"
+    },
+    activeText: {
+        fontWeight: "700"
     },
     content: { paddingHorizontal: 20, paddingBottom: 24 },
     section: {

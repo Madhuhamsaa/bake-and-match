@@ -23,9 +23,27 @@
         "terms": "CONDITIONS D’UTILISATION",
         "privacy": "POLITIQUE DE CONFIDENTIALITE",
         "faq": "QUESTIONS & REPONSES",
-        "account": "COMPTE",
-        "deleteAccount": "SUPPRIMER LE COMPTE",
+        "data": "DONNÉES",
+        "resetData": "Réinitialiser les données",
+        "resetTitle": "Réinitialiser les données",
+        "resetMessage": "Toutes les données locales seront supprimées de cet appareil.",
+        "resetDone": "Les données du jeu ont été réinitialisées.",
         "version": "VERSION",
         "soundEffects": "EFFETS SONORES"
+    },
+    "terms": {
+        "title": "Conditions générales",
+        "acceptButton": "Accepter et continuer",
+        "acceptedTitle": "Conditions acceptées",
+        "acceptedMessage": "Vous avez accepté les conditions générales. Vous pouvez maintenant utiliser l'application.",
+        "content": "Bienvenue dans Bake and Match.\n\nBake and Match est un jeu de mémoire et de logique conçu pour stimuler la concentration, la mémorisation et la réflexion. Le jeu propose des défis chronométrés et des niveaux de difficulté croissants.\n\nLe jeu ne fournit aucun indice ni solution pendant la partie. Certains niveaux peuvent être exigeants mentalement. Les joueurs peuvent arrêter à tout moment en cas d'inconfort ou de stress.\n\nBake and Match est destiné uniquement au divertissement et ne prétend pas améliorer les capacités mentales.\n\nLes joueurs peuvent utiliser des ressources externes pour comprendre la logique des puzzles. Cela reste facultatif.\n\nVous acceptez de ne pas exploiter de failles, de détourner l'application ou de tenter de reproduire ou d'analyser le fonctionnement du jeu.\n\nLe développeur n'est pas responsable du stress, de la frustration ou de la perte de progression liée à l'utilisation du jeu.\n\nEn acceptant ces conditions, vous confirmez comprendre la nature du jeu et accepter l'ensemble des règles ci-dessus."
+    },
+    "privacy": {
+        "title": "Politique de confidentialité",
+        "content": "Bake and Match respecte votre vie privée.\n\nL'application ne collecte aucune donnée personnelle telle que le nom, l'adresse e-mail, le numéro de téléphone ou la localisation.\n\nLes données locales comme la progression du jeu et les paramètres (langue, son, taille du texte) peuvent être stockées sur votre appareil.\n\nAucune donnée n'est partagée avec des tiers et aucune publicité ou outil d'analyse n'est utilisé actuellement.\n\nL'application convient à un public général et ne collecte pas intentionnellement de données concernant les enfants.\n\nEn utilisant cette application, vous acceptez cette politique de confidentialité."
+    },
+    "common": {
+        "cancel": "Annuler",
+        "confirm": "Confirmer"
     }
 }

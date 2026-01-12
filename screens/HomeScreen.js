@@ -29,7 +29,7 @@ export default function HomeScreen() {
                         letterSpacing="0"
                     >
                         <TextPath href="#curve" startOffset="1%" textAnchor="middle">
-                            FOOD & MATCH
+                            BAKE & MATCH
                         </TextPath>
                     </SvgText>
                 </Svg>

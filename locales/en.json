@@ -23,9 +23,27 @@
         "terms": "TERMS & CONDITIONS",
         "privacy": "PRIVACY POLICY",
         "faq": "QUESTIONS & ANSWERS",
-        "account": "ACCOUNT",
-        "deleteAccount": "DELETE ACCOUNT",
+        "data": "DATA",
+        "resetData": "Reset Game Data",
+        "resetTitle": "Reset Game Data",
+        "resetMessage": "This will erase all local progress and settings on this device.",
+        "resetDone": "Game data has been reset.",
         "version": "VERSION",
         "soundEffects": "SOUND EFFECTS"
+    },
+    "terms": {
+        "title": "Terms and Conditions",
+        "acceptButton": "Accept & Continue",
+        "acceptedTitle": "Terms Accepted",
+        "acceptedMessage": "You have accepted the Terms and Conditions. You may now use the app.",
+        "content": "Welcome to Bake and Match.\n\nBake and Match is a memory and logic-based puzzle game designed to challenge concentration, recall, and problem-solving skills. The game includes time-based challenges and increasing difficulty levels.\n\nThe game does not provide hints, clues, or in-game solutions. Some levels may feel challenging or mentally demanding. Players are free to stop playing at any time if they feel discomfort or stress.\n\nBake and Match is intended for entertainment purposes only and does not claim to improve mental health or cognitive abilities.\n\nPlayers may choose to use external resources to understand puzzle logic. This is entirely optional.\n\nYou agree not to exploit bugs, misuse the application, or attempt to copy or reverse-engineer the game logic.\n\nThe developer is not responsible for stress, frustration, fatigue, or loss of progress caused by gameplay or device issues.\n\nBy accepting these terms, you confirm that you understand the nature of the game and agree to all conditions stated above."
+    },
+    "privacy": {
+        "title": "Privacy Policy",
+        "content": "Bake and Match respects your privacy.\n\nThe app does not collect personal information such as name, email, phone number, or location.\n\nLocal data such as game progress and settings (language, sound, font size) may be stored on your device to improve gameplay experience.\n\nBake and Match does not share user data with third parties and does not use advertisements or analytics tools at this stage.\n\nThe app is suitable for general audiences, and no personal data is knowingly collected from children.\n\nBy using this app, you consent to this Privacy Policy."
+    },
+    "common": {
+        "cancel": "Cancel",
+        "confirm": "Confirm"
     }
 }
