@@ -12,19 +12,20 @@
         "exit": "Exit"
     },
     "settings": {
-        "title": "Settings",
-        "audio": "Sound",
-        "music": "Music",
-        "volume": "Volume",
-        "preferences": "Preferences",
-        "language": "Language",
-        "fontSize": "Font Size",
-        "information": "Information",
-        "terms": "Terms & Conditions",
-        "privacy": "Privacy Policy",
-        "faq": "Questions & Answers",
-        "account": "Account",
-        "deleteAccount": "Delete Account",
-        "version": "Version"
+        "title": "SETTINGS",
+        "audio": "SOUND",
+        "music": "MUSIC",
+        "volume": "VOLUME",
+        "preferences": "PREFERENCES",
+        "language": "LANGUAGE",
+        "fontSize": "FONT SIZE",
+        "information": "INFORMATION",
+        "terms": "TERMS & CONDITIONS",
+        "privacy": "PRIVACY POLICY",
+        "faq": "QUESTIONS & ANSWERS",
+        "account": "ACCOUNT",
+        "deleteAccount": "DELETE ACCOUNT",
+        "version": "VERSION",
+        "soundEffects": "SOUND EFFECTS"
     }
 }

@@ -2,14 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import {
-    Pressable,
-    ScrollView,
-    StyleSheet,
-    Switch,
-    Text,
-    View,
-} from "react-native";
+import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import i18n from "../i18n";
 
 export default function SettingsScreen() {
@@ -24,10 +17,11 @@ export default function SettingsScreen() {
         <View style={styles.container}>
             {/* HEADER */}
             <View style={styles.header}>
-                <Pressable onPress={() => router.back()}>
-                    <Ionicons name="arrow-back-outline" size={26} />
+                <Pressable onPress={() => router.back()} style={styles.backButton}>
+                    <Ionicons name="arrow-back-outline" size={30} />
                 </Pressable>
-                <Text style={[styles.headerTitle, { fontSize }]}>
+
+                <Text style={styles.pageTitle}>
                     {t("settings.title")}
                 </Text>
             </View>
@@ -38,16 +32,16 @@ export default function SettingsScreen() {
                     {t("settings.audio")}
                 </Text>
 
-                <View style={styles.row}>
+                <View style={[styles.row, styles.compactRow]}>
                     <Text style={[styles.label, { fontSize }]}>
                         {t("settings.music")}
                     </Text>
                     <Switch value={music} onValueChange={setMusic} />
                 </View>
 
-                <View style={styles.row}>
+                <View style={[styles.row, styles.compactRow]}>
                     <Text style={[styles.label, { fontSize }]}>
-                        Sound Effects
+                        {t("settings.soundEffects")}
                     </Text>
                     <Switch value={sound} onValueChange={setSound} />
                 </View>
@@ -65,14 +59,14 @@ export default function SettingsScreen() {
                 </Pressable>
 
                 <Pressable
-                    style={styles.row}
+                    style={[styles.row, styles.languageRow]}
                     onPress={() => i18n.changeLanguage("fr")}
                 >
                     <Text style={[styles.label, { fontSize }]}>Français</Text>
                 </Pressable>
 
                 <Pressable
-                    style={styles.row}
+                    style={[styles.row, styles.languageRow]}
                     onPress={() => i18n.changeLanguage("ta")}
                 >
                     <Text style={[styles.label, { fontSize }]}>தமிழ்</Text>
@@ -129,38 +123,47 @@ export default function SettingsScreen() {
     );
 }
 const styles = StyleSheet.create({
-    container: { flex: 1, backgroundColor: "#F5F5F5" },
+    container: { flex: 1 },
     header: {
-        flexDirection: "row",
-        alignItems: "center",
-        padding: 16,
-        backgroundColor: "#FFF"
+        paddingTop: 50,        // pushes content down
+        paddingBottom: 16,
+        paddingHorizontal: 20
     },
-    headerTitle: {
-        fontWeight: "600",
-        marginLeft: 12
+    backButton: {
+        width: 44,
+        height: 44,
+        justifyContent: "center"
     },
-    content: { padding: 16 },
+    pageTitle: {
+        fontSize: 28,
+        fontWeight: "800",
+        textAlign: "center",
+        marginTop: 12
+    },
+    content: { paddingHorizontal: 20, paddingBottom: 24 },
     section: {
         fontWeight: "600",
-        marginVertical: 12
+        fontSize: 18,
+        marginTop: 20,
+        marginBottom: 8
     },
     row: {
-        backgroundColor: "#FFF",
-        padding: 14,
+        paddingVertical: 10,
+        paddingHorizontal: 14,
         borderRadius: 10,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        marginBottom: 10
+        marginBottom: 2
+    },
+    compactRow: {
+        marginTop: 2,
+        marginBottom: -6
+    },
+    languageRow: {
+        paddingVertical: 8
     },
     label: {},
-    control: {
-        fontSize: 22,
-        paddingHorizontal: 12
-    },
-    danger: {
-        borderWidth: 1,
-        borderColor: "#FFDADA"
-    }
+    control: { fontSize: 22, paddingHorizontal: 12 },
+    danger: { borderWidth: 1, borderColor: "#FFDADA" }
 });
