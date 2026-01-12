@@ -45,5 +45,35 @@
     "common": {
         "cancel": "Annuler",
         "confirm": "Confirmer"
+    },
+    "profile": {
+        "title": "Profil",
+        "player": "Joueur",
+        "playerId": "ID du joueur",
+        "localProfile": "Profil local",
+        "progress": "Progression",
+        "levelsUnlocked": "Niveaux débloqués",
+        "levelsCompleted": "Niveaux terminés",
+        "difficulty": "Difficulté",
+        "achievements": "Succès",
+        "lockedAchievement": "Succès verrouillé",
+        "preferences": "Préférences",
+        "language": "Langue",
+        "sound": "Son",
+        "music": "Musique",
+        "about": "À propos",
+        "avatarTitle": "Photo de profil",
+        "avatarSubtitle": "Choisissez une option",
+        "useCamera": "Ouvrir la caméra",
+        "useGallery": "Choisir depuis la galerie",
+        "avatarSetTitle": "Profil mis à jour",
+        "avatarSetMessage": "Votre photo de profil a été définie.",
+        "avatarHint": "Ouvrir la caméra ou choisir depuis la galerie",
+        "achFirst": "Premier niveau",
+        "achFive": "Ça chauffe",
+        "achTen": "Mémoire affûtée",
+        "nameUpdatedTitle": "Profil mis à jour",
+        "nameUpdatedMessage": "Votre nom de profil a été modifié.",
+        "aboutDescription": "Bake and Match est un jeu de mémoire et de logique conçu pour stimuler la concentration, la reconnaissance de motifs et la réflexion."
     }
 }

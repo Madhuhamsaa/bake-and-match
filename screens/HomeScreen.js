@@ -66,7 +66,10 @@ export default function HomeScreen() {
                     />
                 </Pressable>
 
-                <Pressable style={styles.bottomBox}>
+                <Pressable
+                    style={styles.bottomBox}
+                    onPress={() => router.push("/profile")}
+                >
                     <Ionicons name="person-outline" size={30} color="#000000ff" />
                 </Pressable>
 
