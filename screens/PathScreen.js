@@ -66,12 +66,16 @@ const getPosition = (level) => {
 
     const { row, col } = GRID_PATTERN[index];
 
+    const globalRow = row + cycle * PATTERN_SIZE;
+
     return {
         left: COLUMN_X[col - 1] - NODE_SIZE / 2,
-        top: (row + cycle * PATTERN_SIZE) * ROW_HEIGHT,
+        top: globalRow * ROW_HEIGHT,
     };
 };
 
+
+console.log("🔥 MEMORY EMOJI SCREEN LOADED");
 
 export default function PathScreen() {
     const router = useRouter();
@@ -98,7 +102,10 @@ export default function PathScreen() {
                 <Pressable onPress={() => router.back()} style={styles.backButton}>
                     <Ionicons name="arrow-back-outline" size={30} />
                 </Pressable>
-                <Text style={styles.pageTitle}>Levels</Text>
+
+                <Text style={styles.pageTitle}>
+                    {t("path.title")}
+                </Text>
             </View>
 
             <ScrollView contentContainerStyle={styles.scroll}>
@@ -141,7 +148,7 @@ export default function PathScreen() {
                             <Pressable
                                 key={level}
                                 disabled={locked}
-                                onPress={() => router.push(`/level-${level}`)}
+                                onPress={() => router.push(`/level/${level}`)}
                                 style={[
                                     styles.node,
                                     {

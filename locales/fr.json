@@ -126,5 +126,33 @@
     "path": {
         "title": "NIVEAUX",
         "teaser": "Les prochains niveaux sont en préparation… restez affamé 😏🍽️"
+    },
+    "game": {
+        "next": "Suivant",
+        "nextLevel": "Niveau suivant prêt",
+        "resultMessages": [
+            "Trop facile ? Le prochain défi arrive 😏",
+            "Tu chauffes… on monte le feu 🔥",
+            "Beau coup 👌 Continuons à cuisiner !",
+            "C’était fluide 😎 Prêt pour la suite ?",
+            "Zéro erreur, que du flow ✨ À suivre !",
+            "Tu as géré 😏 Littéralement. Niveau suivant !",
+            "Ok chef 👨‍🍳🔥 Montre-moi encore !",
+            "Trop fort. Ne t’arrête pas 💃🍰",
+            "Énergie personnage principal 😎 Scène suivante !",
+            "Gros goût, gros moves 🔥 On y va !",
+            "Tu es lancé 🌀 Continue comme ça !",
+            "Délicieux 😋 Prochain défi en chargement…"
+        ]
+    },
+    "memoryWords": {
+        "level2": [
+            "Lait",
+            "Lait",
+            "Sucre",
+            "Sucre",
+            "Farine",
+            "Farine"
+        ]
     }
 }

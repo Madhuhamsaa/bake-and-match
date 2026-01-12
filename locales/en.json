@@ -126,5 +126,33 @@
     "path": {
         "title": "LEVELS",
         "teaser": "Next levels are cooking… stay hungry 😏🍽️"
+    },
+    "game": {
+        "next": "Next",
+        "nextLevel": "Next level ready",
+        "resultMessages": [
+            "Too easy? Next challenge coming 😏",
+            "You’re warming up… let’s turn up the heat 🔥",
+            "Clean move 👌 Let’s keep cooking!",
+            "That was smooth 😎 Ready for more?",
+            "No mistakes, just vibes ✨ Next up!",
+            "You ate that 😏 Literally. Next level!",
+            "Okay chef 👨‍🍳🔥 Show me more!",
+            "Too good. Don’t stop now 💃🍰",
+            "Main character energy 😎 Next scene!",
+            "Big flavour, big moves 🔥 Let’s go!",
+            "You’re on a roll 🌀 Keep it coming!",
+            "That was tasty 😋 Next challenge loading…"
+        ]
+    },
+    "memoryWords": {
+        "level2": [
+            "Milk",
+            "Milk",
+            "Sugar",
+            "Sugar",
+            "Flour",
+            "Flour"
+        ]
     }
 }
