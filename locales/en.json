@@ -113,5 +113,18 @@
         "level3": "Memory Level: No recipes in front of you. Just memory, logic, and instinct — like real cooking.",
         "tipsTitle": "Good to Know",
         "tipsText": "There are no lives to lose and no hints to buy. If you’re stuck, think, retry, or even Google it — real cooks do. This is a mobile game made to relax your brain, not break your heart."
+    },
+    "levels": {
+        "memoryEmoji": "Memory Emoji",
+        "memoryWord": "Memory Word",
+        "baking1": "Baking 1",
+        "baking2": "Baking 2",
+        "baking3": "Baking 3",
+        "miniPuzzle": "Mini Puzzle",
+        "largePuzzle": "Large Puzzle"
+    },
+    "path": {
+        "title": "Levels",
+        "teaser": "Next levels are cooking… stay hungry 😏🍽️"
     }
 }

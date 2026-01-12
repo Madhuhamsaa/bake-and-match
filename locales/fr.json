@@ -113,5 +113,18 @@
         "level3": "Niveau Mémoire : Plus de recettes visibles. Seulement votre mémoire et votre logique.",
         "tipsTitle": "À savoir",
         "tipsText": "Aucune vie à perdre, aucun indice à acheter. Réessayez, réfléchissez, ou cherchez ailleurs — comme en vraie cuisine. Un jeu mobile fait pour apaiser l’esprit."
+    },
+    "levels": {
+        "memoryEmoji": "Mémoire Emoji",
+        "memoryWord": "Mémoire Mots",
+        "baking1": "Cuisine 1",
+        "baking2": "Cuisine 2",
+        "baking3": "Cuisine 3",
+        "miniPuzzle": "Mini Puzzle",
+        "largePuzzle": "Grand Puzzle"
+    },
+    "path": {
+        "title": "Niveaux",
+        "teaser": "Les prochains niveaux sont en préparation… restez affamé 😏🍽️"
     }
 }

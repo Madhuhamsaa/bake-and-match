@@ -85,7 +85,10 @@ export default function HomeScreen() {
                 </Text>
 
                 {/* START BUTTON */}
-                <Pressable style={styles.startButton}>
+                <Pressable
+                    style={styles.startButton}
+                    onPress={() => router.push("/levels")}
+                >
                     <Text style={[styles.startText, { fontSize: fontSize + 2 }]}>
                         START
                     </Text>
