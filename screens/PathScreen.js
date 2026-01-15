@@ -58,7 +58,7 @@ const getLevelLabelKey = (level) => {
 };
 
 /* POSITION — THIS NOW REPEATS CORRECTLY */
-const PATTERN_SIZE = GRID_PATTERN.length;
+const PATTERN_SIZE = 10;
 
 const getPosition = (level) => {
     const index = (level - 1) % PATTERN_SIZE;
@@ -66,14 +66,13 @@ const getPosition = (level) => {
 
     const { row, col } = GRID_PATTERN[index];
 
-    const globalRow = row + cycle * PATTERN_SIZE;
+    const top = (cycle * PATTERN_SIZE + row) * ROW_HEIGHT;
 
     return {
         left: COLUMN_X[col - 1] - NODE_SIZE / 2,
-        top: globalRow * ROW_HEIGHT,
+        top,
     };
 };
-
 
 console.log("🔥 MEMORY EMOJI SCREEN LOADED");
 

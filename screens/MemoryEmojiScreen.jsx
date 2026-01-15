@@ -111,7 +111,7 @@ export default function MemoryEmojiScreen({ level }) {
                                     onPress={() => onCardPress(index)}
                                 >
                                     <Text style={styles.cardText}>
-                                        {isOpen ? emoji : "❓"}
+                                        {isOpen ? emoji : "❤️"}
                                     </Text>
                                 </Pressable>
                             );

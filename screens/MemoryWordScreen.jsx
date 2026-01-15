@@ -111,7 +111,7 @@ export default function MemoryWordScreen({ level }) {
                                     onPress={() => onCardPress(index)}
                                 >
                                     <Text style={styles.wordText}>
-                                        {isOpen ? word : "?"}
+                                        {isOpen ? word : "❤️"}
                                     </Text>
                                 </Pressable>
                             );
