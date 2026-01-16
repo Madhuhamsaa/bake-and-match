@@ -1,7 +1,8 @@
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
 import { useRouter } from "expo-router";
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Dimensions, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import Svg, { Path } from "react-native-svg";
@@ -81,13 +82,25 @@ export default function PathScreen() {
     const [unlocked, setUnlocked] = useState(1);
     const { t } = useTranslation();
 
-    useEffect(() => {
-        const load = async () => {
-            const v = await AsyncStorage.getItem("levelsUnlocked");
-            setUnlocked(Number(v) || 1);
-        };
-        load();
-    }, []);
+    useFocusEffect(
+        React.useCallback(() => {
+            let isActive = true;
+
+            const load = async () => {
+                const v = await AsyncStorage.getItem("levelsUnlocked");
+                if (isActive) {
+                    setUnlocked(Number(v) || 1);
+                }
+            };
+
+            load();
+
+            return () => {
+                isActive = false;
+            };
+        }, [])
+    );
+
 
     const PATTERN_SIZE = GRID_PATTERN.length;
     const TOTAL_CYCLES = Math.ceil(TOTAL_LEVELS / PATTERN_SIZE);

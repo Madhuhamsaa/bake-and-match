@@ -165,6 +165,17 @@
         "pickCount": "Pick {{count}} correct ingredients to move on 😏"
     },
     "ingredients": {
+        "lemon": "Lemon",
+        "cheese": "Cheese",
+        "honey": "Honey",
+        "butter": "Butter",
+        "strawberry": "Strawberry",
+        "cake": "Cake",
+        "essence": "Essence",
+        "iceCream": "Ice Cream",
+        "chocolate": "Chocolate",
+        "cookie": "Cookie",
+        "egg": "Egg",
         "milk": "Milk",
         "sugar": "Sugar",
         "flour": "Flour",

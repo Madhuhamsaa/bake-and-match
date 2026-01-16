@@ -3,13 +3,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import {
-    Modal,
-    Pressable,
-    StyleSheet,
-    Text,
-    View,
-} from "react-native";
+import { Modal, Pressable, StyleSheet, Text, View } from "react-native";
+import { getCakeMemoryWords } from "../utils/getCakeMemoryWords";
 
 const shuffle = (array) =>
     [...array].sort(() => Math.random() - 0.5);
@@ -23,10 +18,28 @@ export default function MemoryWordScreen({ level }) {
     const [matched, setMatched] = useState([]);
     const [completed, setCompleted] = useState(false);
 
-    /* WORDS FROM TRANSLATION */
-    const WORDS = t("memoryWords.level2", { returnObjects: true });
+    /* 🔹 GET WORD KEYS BASED ON LEVEL */
+    const wordKeys = getCakeMemoryWords(level);
 
-    /* RESULT TEXTS */
+    /* 🔹 INIT GAME WITH TRANSLATED WORDS */
+    useEffect(() => {
+        if (!wordKeys.length) return;
+
+        const translatedWords = wordKeys.map((key) =>
+            t(`ingredients.${key}`)
+        );
+
+        const shuffledCards = shuffle([
+            ...translatedWords,
+            ...translatedWords,
+        ]);
+
+        setCards(shuffledCards);
+        setFlipped([]);
+        setMatched([]);
+    }, [level, t]);
+
+    /* 🔹 RESULT MESSAGE */
     const resultMessages = t("game.resultMessages", {
         returnObjects: true,
     });
@@ -34,12 +47,7 @@ export default function MemoryWordScreen({ level }) {
     const resultMessage =
         resultMessages[level % resultMessages.length];
 
-    /* INIT GAME */
-    useEffect(() => {
-        setCards(shuffle(WORDS));
-    }, []);
-
-    /* CARD PRESS */
+    /* 🔹 CARD PRESS */
     const onCardPress = (index) => {
         if (flipped.length === 2) return;
         if (flipped.includes(index) || matched.includes(index)) return;
@@ -59,21 +67,27 @@ export default function MemoryWordScreen({ level }) {
         }
     };
 
-    /* COMPLETION CHECK */
+    /* 🔹 COMPLETION CHECK */
     useEffect(() => {
         if (matched.length === cards.length && cards.length > 0) {
             setTimeout(() => setCompleted(true), 500);
         }
     }, [matched, cards]);
 
-    /* NEXT LEVEL */
+    /* 🔹 NEXT LEVEL */
     const goNext = async () => {
         const unlocked =
             Number(await AsyncStorage.getItem("levelsUnlocked")) || 1;
 
         if (level + 1 > unlocked) {
-            await AsyncStorage.setItem("levelsUnlocked", String(level + 1));
-            await AsyncStorage.setItem("levelsCompleted", String(level));
+            await AsyncStorage.setItem(
+                "levelsUnlocked",
+                String(level + 1)
+            );
+            await AsyncStorage.setItem(
+                "levelsCompleted",
+                String(level)
+            );
         }
 
         setCompleted(false);
@@ -99,7 +113,8 @@ export default function MemoryWordScreen({ level }) {
                     <View style={styles.grid}>
                         {cards.map((word, index) => {
                             const isOpen =
-                                flipped.includes(index) || matched.includes(index);
+                                flipped.includes(index) ||
+                                matched.includes(index);
 
                             return (
                                 <Pressable

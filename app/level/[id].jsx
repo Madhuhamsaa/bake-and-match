@@ -1,4 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
+import { LEVELS } from "../../constants/levels";
+
 import BakingStepOneScreen from "../../screens/BakingStepOneScreen";
 import MemoryEmojiScreen from "../../screens/MemoryEmojiScreen";
 import MemoryWordScreen from "../../screens/MemoryWordScreen";
@@ -7,9 +9,20 @@ export default function LevelRouter() {
     const { id } = useLocalSearchParams();
     const level = Number(id);
 
-    if (level === 1) return <MemoryEmojiScreen level={level} />;
-    if (level === 2) return <MemoryWordScreen level={level} />;
-    if (level === 3) return <BakingStepOneScreen level={level} />;
+    const config = LEVELS[level];
+    if (!config) return null;
+
+    if (config.type === "memoryEmoji") {
+        return <MemoryEmojiScreen level={level} />;
+    }
+
+    if (config.type === "memoryWord") {
+        return <MemoryWordScreen level={level} />;
+    }
+
+    if (config.type === "baking") {
+        return <BakingStepOneScreen level={level} />;
+    }
 
     return null;
 }

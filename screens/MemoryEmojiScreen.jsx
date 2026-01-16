@@ -3,17 +3,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import {
-    Modal,
-    Pressable,
-    StyleSheet,
-    Text,
-    View,
-} from "react-native";
+import { Modal, Pressable, StyleSheet, Text, View } from "react-native";
+import { getCakeMemoryEmojis } from "../utils/getCakeMemoryEmojis";
 
-/* LEVEL 1 DATA */
-const EMOJIS = ["🍎", "🍎", "🥛", "🥛", "🍌", "🍌"];
-
+/* SHUFFLE HELPER */
 const shuffle = (array) =>
     [...array].sort(() => Math.random() - 0.5);
 
@@ -26,18 +19,26 @@ export default function MemoryEmojiScreen({ level }) {
     const [matched, setMatched] = useState([]);
     const [completed, setCompleted] = useState(false);
 
-    /* GET TRANSLATED RESULT MESSAGES (INSIDE COMPONENT ✅) */
+    /* LOAD EMOJIS FOR THIS LEVEL (NO REPEAT GUARANTEED) */
+    useEffect(() => {
+        const baseEmojis = getCakeMemoryEmojis(level);
+
+        const generatedCards = shuffle(
+            baseEmojis.flatMap((emoji) => [emoji, emoji])
+        );
+
+        setCards(generatedCards);
+        setFlipped([]);
+        setMatched([]);
+    }, [level]);
+
+    /* RESULT MESSAGE */
     const resultMessages = t("game.resultMessages", {
         returnObjects: true,
     });
 
     const resultMessage =
         resultMessages[level % resultMessages.length];
-
-    /* INIT GAME */
-    useEffect(() => {
-        setCards(shuffle(EMOJIS));
-    }, []);
 
     /* CARD PRESS */
     const onCardPress = (index) => {
@@ -72,8 +73,14 @@ export default function MemoryEmojiScreen({ level }) {
             Number(await AsyncStorage.getItem("levelsUnlocked")) || 1;
 
         if (level + 1 > unlocked) {
-            await AsyncStorage.setItem("levelsUnlocked", String(level + 1));
-            await AsyncStorage.setItem("levelsCompleted", String(level));
+            await AsyncStorage.setItem(
+                "levelsUnlocked",
+                String(level + 1)
+            );
+            await AsyncStorage.setItem(
+                "levelsCompleted",
+                String(level)
+            );
         }
 
         setCompleted(false);

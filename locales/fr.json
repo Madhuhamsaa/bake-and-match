@@ -156,7 +156,7 @@
         ]
     },
     "baking": {
-        "step1Title": "ÉTAPE 1",
+        "step1Title": "ÉTAPE-1",
         "step1Instruction": "Choisis bien les ingrédients de base 👀",
         "successEasy": "Bon début 😏 Les bases sont solides !",
         "fail": "Oups 😬 Mauvais ingrédient !",
@@ -165,12 +165,23 @@
         "pickCount": "Choisis {{count}} bons ingrédients pour continuer 😏"
     },
     "ingredients": {
-        "milk": "Lait",
+        "lemon": "Citron",
+        "cheese": "Fromage",
+        "honey": "Miel",
+        "butter": "Beurre",
+        "strawberry": "Fraise",
+        "cake": "Gâteau",
+        "essence": "Essence",
+        "iceCream": "Glace",
+        "salt": "Sel",
+        "chocolate": "Chocolat",
         "sugar": "Sucre",
         "flour": "Farine",
+        "cookie": "Biscuit",
+        "milk": "Lait",
+        "egg": "Œuf",
         "water": "Eau",
-        "slime": "Slime",
-        "salt": "Sel",
+        "slime": "Boue",
         "yeast": "Levure",
         "yogurt": "Yaourt",
         "juice": "Jus"
