@@ -19,7 +19,7 @@ const INGREDIENTS = [
     { key: "water", correct: true },
 
     { key: "slime", correct: false },
-    { key: "salt", correct: false },
+    { key: "wine", correct: false },
     { key: "yeast", correct: false },
     { key: "yogurt", correct: false },
     { key: "juice", correct: false },

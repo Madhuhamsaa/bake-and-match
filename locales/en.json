@@ -162,7 +162,15 @@
         "fail": "Oops 😬 That doesn’t belong here!",
         "continue": "Let’s cook 🔥",
         "tryAgain": "Start over",
-        "pickCount": "Pick {{count}} correct ingredients to move on 😏"
+        "pickCount": "Pick {{count}} correct ingredients to move on 😏",
+        "step2Title": "STEP-2",
+        "step2Instruction": "Choose the basic ingredients needed for Baking.",
+        "cantDoIt": "Oh no! I can’t do it!",
+        "successMedium": "Nice! The batter is perfectly mixed.",
+        "mixing": "Mixing... 🌀",
+        "breaking": "Oops! The pot broke 💥",
+        "wrongIngredient": "Wrong ingredient! Try again 😬",
+        "keepGoing": "Good job! Keep mixing 🔥"
     },
     "ingredients": {
         "lemon": "Lemon",
@@ -184,6 +192,16 @@
         "salt": "Salt",
         "yeast": "Yeast",
         "yogurt": "Yogurt",
-        "juice": "Juice"
+        "juice": "Juice",
+        "oil": "Oil",
+        "soda": "Baking Soda",
+        "eggs": "Eggs",
+        "red": "Red",
+        "wine": "Wine",
+        "rice": "Rice",
+        "potato": "Potato",
+        "beef": "Beef",
+        "oats": "Oats",
+        "perfume": "Perfume"
     }
 }

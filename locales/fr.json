@@ -162,7 +162,15 @@
         "fail": "Oups 😬 Mauvais ingrédient !",
         "continue": "On cuisine 🔥",
         "tryAgain": "Recommencer",
-        "pickCount": "Choisis {{count}} bons ingrédients pour continuer 😏"
+        "pickCount": "Choisis {{count}} bons ingrédients pour continuer 😏",
+        "step2Title": "Cuisson – Étape-2",
+        "step2Instruction": "Choisissez les ingrédients de base nécessaires pour préparer.",
+        "cantDoIt": "Oh non ! Je n’y arrive pas !",
+        "successMedium": "Bien joué ! La pâte est bien mélangée.",
+        "mixing": "On mélange🌀",
+        "breaking": "Oups ! Le pot s'est cassé 💥",
+        "wrongIngredient": "Mauvais ingrédient ! Réessaie 😬",
+        "keepGoing": "Bien joué ! Continue à mélanger 🔥"
     },
     "ingredients": {
         "lemon": "Citron",
@@ -184,6 +192,16 @@
         "slime": "Boue",
         "yeast": "Levure",
         "yogurt": "Yaourt",
-        "juice": "Jus"
+        "juice": "Jus",
+        "oil": "Huile",
+        "soda": "Bicarbonate",
+        "eggs": "Œufs",
+        "red": "Rouge",
+        "wine": "Vin",
+        "rice": "Riz",
+        "potato": "Pomme de terre",
+        "beef": "Bœuf",
+        "oats": "Avoine",
+        "perfume": "Parfum"
     }
 }
